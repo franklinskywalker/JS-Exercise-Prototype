@@ -49,23 +49,19 @@ function Person(name, age) {
 
 
 Person.prototype.eat = function (somefood){
-  this.somefood = somefood;
-  if( somefood === 'edible' && this.stomach.length <= 10){
+  if( this.stomach.length < 10){
     this.stomach.push(somefood);
   } 
 }
 
-Person.prototype.poop = function (flush){
- this.flush = flush;
- if ( flush == true) {
-   return this.stomach.splice(0, this.stomach.length);
- }
+Person.prototype.poop = function (){
+  return this.stomach = [];
 }
-Person.prototype.toString = function (){
 
+Person.prototype.toString = function (){
   return `${this.name}, ${this.age}`;
 }
-const franklin = new Person ("franklin", 23);
+
 
 
 
